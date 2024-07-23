@@ -1,0 +1,51 @@
+<br>
+<div class="container">
+  <div class="bg-white border rounded shadow-sm overflow-hidden p-3 col-lg-12">
+    <div class="row pb-3">
+      <div class="col">
+        <h2> <i class="fa-solid fa-circle"></i> Procurar Mota</h2>
+      </div>
+      <div class="col-1">
+        <button (click)="clearForm()" class="col btn btn-primary col-12"><i
+            class="fa-solid fa-delete-left"></i></button>
+      </div>
+    </div>
+    <form [formGroup]="filterForm">
+      <div class="row row-cols-4 pb-3">
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fa-solid fa-tag"></i>
+            </span>
+            <input type="text" formControlName="make" class="form-control text-center" placeholder="Marca">
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fa-solid fa-motorcycle"></i>
+            </span>
+            <input type="text" formControlName="model" class="form-control text-center" placeholder="Modelo">
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fa-solid fa-window-maximize"></i>
+            </span>
+            <input type="text" formControlName="licensePlate" oninput="this.value = this.value.toUpperCase()"
+              class="form-control text-center" placeholder="Matrícula">
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fa-solid fa-barcode"></i>
+            </span>
+            <input type="text" formControlName="vin" class="form-control text-center" placeholder="VIN">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

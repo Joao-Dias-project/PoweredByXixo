@@ -1,0 +1,59 @@
+<br>
+<div class="container">
+  <div class="bg-white border rounded shadow-sm overflow-hidden p-3 col-lg-12">
+    <div class="row pb-3">
+      <div class="col">
+        <h2> <i class="fa-solid fa-circle"></i> Procurar Atendimento</h2>
+      </div>
+      <div class="col-1">
+        <button (click)="clearForm()" class="col btn btn-primary col-12"><i class="fa-solid fa-delete-left"></i></button>
+      </div>
+    </div>
+    <form [formGroup]="filterForm">
+      <div class="row row-cols-5 pb-3">
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fa-solid fa-hashtag"></i>
+            </span>
+            <input type="number" formControlName="id" class="form-control text-center" placeholder="Id">
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fa-solid fa-user"></i>
+            </span>
+            <input type="text" [readonly]="true" [value]="clientName" (click)="dialogFactory('client')"
+              style="cursor: pointer;" class="form-control text-center" placeholder="Cliente">
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fa-solid fa-motorcycle"></i>
+            </span>
+            <input type="text" [readonly]="true" [value]="licensePlate" (click)="dialogFactory('motorcycle')"
+              style="cursor: pointer;" class="form-control text-center" placeholder="Mota">
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fa-solid fa-forward"></i>
+            </span>
+            <input type="date" formControlName="dateStart" class="form-control text-center">
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fa-solid fa-backward"></i>
+            </span>
+            <input type="date" formControlName="date" class="form-control text-center">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

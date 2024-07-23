@@ -1,0 +1,23 @@
+<br>
+<div class="container">
+    <table class="table table-striped table-bordered text-center rounded shadow-sm overflow-hidden p-3">
+        <thead>
+            <tr>
+                <th><i class="fa-solid fa-tag"></i> Marca | <i class="fa-solid fa-motorcycle"></i> Modelo</th>
+                <th><i class="fa-solid fa-window-maximize"></i> Matrícula</th>
+                <th><i class="fa-solid fa-barcode"></i> VIN</th>
+                <th><i class="fa-solid fa-road"></i> Quilómetros</th>
+                <th><i class="fa-solid fa-calendar-xmark"></i> Ano</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr *ngFor="let moto of motorcycles" (click)="select(moto)" style="cursor: pointer;">
+                <td class="text-decoration-none text-reset text-truncate">{{ moto.make }} {{ moto.model }}</td>
+                <td class="text-decoration-none text-reset">{{ moto.licensePlate }}</td>
+                <td class="text-decoration-none text-reset">{{ moto.vin }}</td>
+                <td class="text-decoration-none text-reset">{{ moto.mileage }}</td>
+                <td class="text-decoration-none text-reset">{{ moto.year }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

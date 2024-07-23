@@ -1,0 +1,23 @@
+<br>
+<div class="container">
+    <table class="table table-striped table-bordered text-center rounded shadow-sm overflow-hidden p-3">
+        <thead>
+            <tr>
+                <th><i class="fa-solid fa-signature"></i> Nome</th>
+                <th><i class="fa-solid fa-at"></i> Email</th>
+                <th><i class="fa-solid fa-phone"></i> Telefone</th>
+                <th><i class="fa-solid fa-id-card"></i> Contribuinte</th>
+                <th><i class="fa-solid fa-hashtag"></i> ID</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr *ngFor="let client of clients" (click)="select(client)" style="cursor: pointer;">
+                <td class="text-decoration-none text-reset">{{ client.name }} </td>
+                <td class="text-decoration-none text-reset">{{ client.email }}</td>
+                <td class="text-decoration-none text-reset">{{ client.phoneNumber }}</td>
+                <td class="text-decoration-none text-reset">{{ client.taxNumber }}</td>
+                <td class="text-decoration-none text-reset">{{ client.invoiceId }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

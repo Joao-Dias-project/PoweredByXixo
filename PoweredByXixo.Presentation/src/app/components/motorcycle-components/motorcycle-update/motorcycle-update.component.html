@@ -1,0 +1,79 @@
+<br>
+<div class="container">
+    <div class="bg-white border rounded shadow-sm overflow-hidden p-3 col-lg-12">
+        <div class="row pb-3">
+            <div class="col">
+                <h2> <i class="fa-solid fa-circle"></i> Alterar Mota</h2>
+            </div>
+            <div class="col-1">
+                <button (click)="submit()" class="btn btn-success col-12"><i class="fa-solid fa-check"></i></button>
+            </div>
+            <div class="col-1">
+                <button (click)="delete()" class="btn btn-danger col-12"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+            <div class="col-1">
+                <button (click)="closeDialog()" class="col btn btn-secondary col-12"><i
+                        class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger text-center p-2"><i
+                class="fa-solid fa-triangle-exclamation"></i> {{ errorMessage }} <i
+                class="fa-solid fa-triangle-exclamation"></i></div>
+        <div class="row row-cols-3 pb-3">
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-tag"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="moto.make" class="form-control text-center" placeholder="Marca">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-motorcycle"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="moto.model" class="form-control text-center" placeholder="Modelo">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-window-maximize"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="moto.licensePlate" oninput="this.value = this.value.toUpperCase()"
+                        class="form-control text-center" placeholder="Matrícula" (blur)="onBlur()">
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-3 pb-3">
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-barcode"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="moto.vin" class="form-control text-center" placeholder="VIN">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-road"></i>
+                    </span>
+                    <input type="number" [(ngModel)]="moto.mileage" name="kilometros" class="form-control text-center"
+                        value="0">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-calendar-xmark"></i>
+                    </span>
+                    <input type="number" [(ngModel)]="moto.year" name="ano" class="form-control text-center" value="0">
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-motorcycle-work-order-listing [moto]="moto"></app-motorcycle-work-order-listing>
+    <br>
+</div>

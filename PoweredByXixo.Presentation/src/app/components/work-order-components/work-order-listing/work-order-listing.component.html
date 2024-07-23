@@ -1,0 +1,29 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table table-striped table-bordered text-center rounded shadow-sm p-3">
+        <thead>
+          <tr>
+            <th><i class="fa-solid fa-hashtag"></i></th>
+            <th><i class="fa-solid fa-user"></i> Nome do Cliente</th>
+            <th><i class="fa-solid fa-id-card"></i> Contribuinte</th>
+            <th><i class="fa-solid fa-tag"></i> Marca | <i class="fa-solid fa-motorcycle"></i> Modelo</th>
+            <th><i class="fa-solid fa-window-maximize"></i> Matrícula</th>
+            <th><i class="fa-regular fa-calendar"></i> Data</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let wo of workOrders" (click)="select(wo)" style="cursor: pointer;">
+            <td class="text-decoration-none text-reset">{{ wo.id }}</td>
+            <td class="text-decoration-none text-reset">{{ wo.client.name }}</td>
+            <td class="text-decoration-none text-reset">{{ wo.client.taxNumber }}</td>
+            <td class="text-decoration-none text-reset">{{ wo.motorcycle.make }} {{ wo.motorcycle.model }}</td>
+            <td class="text-decoration-none text-reset">{{ wo.motorcycle.licensePlate }}</td>
+            <td class="text-decoration-none text-reset">{{ wo.date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

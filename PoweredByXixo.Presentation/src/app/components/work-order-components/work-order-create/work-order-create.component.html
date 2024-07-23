@@ -1,0 +1,82 @@
+<br>
+<div class="container">
+    <div class="bg-white border rounded shadow-sm overflow-hidden p-3 col-lg-12">
+        <div class="row pb-3">
+            <div class="col">
+                <h2> <i class="fa-solid fa-circle"></i> Registar Atendimento</h2>
+            </div>
+            <div class="col-1">
+                <button (click)="submit()" class="btn btn-success col-12 "><i class="fa-solid fa-check"></i></button>
+            </div>
+            <div class="col-1">
+                <button (click)="closeDialog()" class="col btn btn-secondary col-12"><i
+                        class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger text-center p-2"><i
+                class="fa-solid fa-triangle-exclamation"></i> {{ errorMessage }} <i
+                class="fa-solid fa-triangle-exclamation"></i></div>
+        <div class="row pb-3">
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <input type="text" [readonly]="true" [(ngModel)]="wo.client.name" (click)="dialogFactory('client')"
+                        style="cursor: pointer;" class="form-control text-center" placeholder="Cliente">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-motorcycle"></i>
+                    </span>
+                    <input type="text" [readonly]="true" [(ngModel)]="wo.motorcycle.licensePlate"
+                        (click)="dialogFactory('motorcycle')" style="cursor: pointer;" class="form-control text-center"
+                        placeholder="Mota">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-road"></i>
+                    </span>
+                    <input type="number" [(ngModel)]="wo.mileage" class="form-control text-center"
+                        placeholder="Quilómetros">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-regular fa-calendar"></i>
+                    </span>
+                    <input type="date" [(ngModel)]="wo.date" class="form-control text-center"
+                        value="[(ngModel)]='wo.date'">
+                </div>
+            </div>
+        </div>
+        <div class="row pb-3">
+            <div class="col-12">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="wo.reportedIssues" class="form-control text-center"
+                        placeholder="Relatado">
+                </div>
+            </div>
+        </div>
+        <div class="row pb-3">
+            <div class="col-12">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-list-check"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="wo.workPerformed" class="form-control text-center"
+                        placeholder="Efetuado">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>

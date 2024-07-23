@@ -1,0 +1,100 @@
+<br>
+<div class="container">
+    <div class="bg-white border rounded shadow-sm overflow-hidden p-3 col-lg-12">
+        <div class="row pb-3">
+            <div class="col">
+                <h2> <i class="fa-solid fa-circle"></i> Alterar Cliente</h2>
+            </div>
+            <div class="col-1">
+                <button (click)="submit()" class="btn btn-success col-12"><i class="fa-solid fa-check"></i></button>
+            </div>
+            <div class="col-1">
+                <button (click)="delete()" class="btn btn-danger col-12"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+            <div class="col-1">
+                <button (click)="closeDialog()" class="col btn btn-secondary col-12"><i
+                        class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger text-center p-2"><i
+                class="fa-solid fa-triangle-exclamation"></i> {{ errorMessage }} <i
+                class="fa-solid fa-triangle-exclamation"></i></div>
+        <div class="row row-cols-3 pb-3">
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-signature"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="client.name" class="form-control text-center" placeholder="Nome">
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="client.address" class="form-control text-center"
+                        placeholder="Morada">
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-3 pb-3">
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-envelopes-bulk"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="client.postalCode" class="form-control text-center"
+                        placeholder="Código Postal">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="client.location" class="form-control text-center"
+                        placeholder="Localidade">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-hashtag"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="client.invoiceId" class="form-control text-center" placeholder="ID">
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-3 pb-3">
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-phone"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="client.phoneNumber" class="form-control text-center"
+                        placeholder="Telefone" (blur)="onBlur()">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-id-card"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="client.taxNumber" class="form-control text-center"
+                        placeholder="Contribuinte">
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fa-solid fa-at"></i>
+                    </span>
+                    <input type="text" [(ngModel)]="client.email" class="form-control text-center" placeholder="Email">
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-client-motorcycle-listing [client]="client"></app-client-motorcycle-listing>
+    <br>
+</div>

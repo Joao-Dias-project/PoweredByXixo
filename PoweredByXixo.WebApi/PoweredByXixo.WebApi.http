@@ -1,0 +1,6 @@
+@PoweredByXixo.WebApi_HostAddress = http://localhost:5048
+
+GET {{PoweredByXixo.WebApi_HostAddress}}
+Accept: application/json
+
+###

@@ -1,0 +1,49 @@
+<br>
+<div class="container">
+  <div class="bg-white border rounded shadow-sm overflow-hidden p-3 col-lg-12">
+    <div class="row pb-3">
+      <div class="col">
+        <h2> <i class="fa-solid fa-circle"></i> Procurar Cliente</h2>
+      </div>
+      <div class="col-1">
+        <button (click)="clearForm()" class="col btn btn-primary col-12"><i class="fa-solid fa-delete-left"></i></button>
+      </div>
+    </div>
+    <form [formGroup]="filterForm">
+      <div class="row row-cols-4 pb-3">
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fa-solid fa-signature"></i>
+            </span>
+            <input type="text" formControlName="name" class="form-control text-center" placeholder="Nome">
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fa-solid fa-at"></i>
+            </span>
+            <input type="text" formControlName="email" class="form-control text-center" placeholder="Email">
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fa-solid fa-phone"></i>
+            </span>
+            <input type="text" formControlName="phoneNumber" class="form-control text-center" placeholder="Telefone">
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fa-solid fa-id-card"></i>
+            </span>
+            <input type="text" formControlName="taxNumber" class="form-control text-center" placeholder="Contribuinte">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
